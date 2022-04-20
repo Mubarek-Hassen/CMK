@@ -24,6 +24,16 @@ app.get('/justice-league/:id', (req, res)=>{
     res.render('show.ejs', context)
 })
 
+app.get('/justice-league/:id/edit', (req, res) => {
+    let id = req.params.id
+    const char = justice[id]
+    const context = {
+        hero: char,
+        charID: id
+    }
+    res.render('edit.ejs', context)
+})
+
 app.post('/justice-league', (req, res)=>{
     justice.push(req.body)
     res.redirect('/justice-league')
@@ -34,6 +44,7 @@ app.delete('/justice-league/:id', (req, res) => {
     // possibly variable justice
     res.redirect('/justice-league')
 })
+
 
 app.listen(PORT, () => {
     console.log(`Listening at port: ${PORT}`)

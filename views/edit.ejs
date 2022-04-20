@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include( 'partials/head.ejs', {page: `Change a Member`} ) %>
+<body>
+    <form method="POST" action="/justice-league/<%= hero.id %>/?_method=PUT">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="<%= hero.name %>" />
+
+        <label for="ability">Ability:</label>
+        <input type="text" name="ability" id="ability" value="<%= hero.ability %>"/>
+   
+        <label for="img">Image:</label>
+        <input type="text" name="img" id="img" value="<%= hero.img %>"/>
+        <input type="submit" value="Edit Member">  
+    </form>
+    <% console.log('hi') %>
+</body>
+</html>
