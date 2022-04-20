@@ -4,8 +4,11 @@ const PORT = 4000
 
 const justice = require('./Models/justice')
 
+const methodOverride = require('method-override')
+
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({extended: true}))
+app.use(methodOverride('_method'))
 
 app.get('/justice-league', (req,res)=> {
     const context = {justice}
@@ -26,6 +29,11 @@ app.post('/justice-league', (req, res)=>{
     res.redirect('/justice-league')
 })
 
+app.delete('/justice-league/:id', (req, res) => {
+    justice.splice(req.params.id, 1)
+    // possibly variable justice
+    res.redirect('/justice-league')
+})
 
 app.listen(PORT, () => {
     console.log(`Listening at port: ${PORT}`)
