@@ -7,6 +7,9 @@
     <div> 
          <h3>Ability: <%= just.ability %> </h3> 
          <img src="<%= just.img %> " alt="<%= just.name %> ">
-    </div> 
+    </div>
+    <form action="/justice-league/<%= id %>?_method=DELETE" method="POST">
+       <input type="submit" value="Kill!!!"/>
+    </form> 
 </body>
 </html>
