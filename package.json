@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/Mubarek-Hassen/CMK#readme",
   "dependencies": {
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.7",
     "express": "^4.17.3"
   }
 }
