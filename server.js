@@ -11,6 +11,11 @@ app.get('/justice-league', (req,res)=> {
     res.render('index', context)
 })
 
+app.get('/justice-league/:id', (req, res)=>{
+    const context = {just: justice[req.params.id], id: req.params.id};
+    res.render('show.ejs', context)
+})
+
 app.listen(PORT, () => {
     console.log(`Listening at port: ${PORT}`)
 })
